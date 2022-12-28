@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="/socket.io/socket.io.js"></script>
     <script src="index.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -23,14 +24,14 @@
       <h3 class="container" style="padding-top: 1%;">Ingresar producto</h3>
     <div class="container">
       <div class="container">
-        <form onsubmit="return addProductos(this)">
+        <form onsubmit="return addProductos(this)" id="formAgregarProducto">
             <label for="nombre"></label>
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto">
             <label for="precio"></label><br>
             <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio">
             <label for="thumbnail"></label><br>
             <input type="text" class="form-control" id="thumbnail" name="thumbnail" placeholder="Imagen"><br>
-            <input type="submit" value="Enviar" class="btn btn-success">
+            <button type="submit" class="btn btn-success">Enviar</button>
         </form>
       </div>
     </div>
@@ -60,20 +61,22 @@
       <h2>Centro de Mensajería</h2>
       <h3 class="container" style="padding-top: 1%; padding-bottom: 2%;">Ingresar email y mensaje</h3>
       <a name="chat"></a>
+      <input type="text" id="inputUsername" class="form-control w-50 my-2 mr-2" placeholder="Ingresá tu email">
       <div class="container">
-        <form onsubmit="return addMessage(this)">
+        <form onsubmit="return addMessage(this)" id="formPublicarMensaje">
           <input type="text" id="inputEmail" placeholder="Em@il" class="form-control"></br>
           <input type="text" id="inputNombre" placeholder="Nombre" class="form-control"></br>
           <input type="text" id="inputApellido" placeholder="Apellido" class="form-control"></br>
           <input type="text" id="inputEdad" placeholder="Edad" class="form-control"><br>
           <input type="text" id="inputAlias" placeholder="Alias" class="form-control"></br>
           <input type="text" id="inputAvatar" placeholder="Avatar" class="form-control"></br>
-          <input type="submit" class="btn btn-success" id="btnEnviar" value="Enviar">
+          <button type="submit" class="btn btn-success" id="btnEnviar">Enviar</button>
         </form>
         <div id="mensajes">
         </div>
         </div>
       </div>
     </section>
+    <script src="js/main.js"></script>
 </body>
 </html>
